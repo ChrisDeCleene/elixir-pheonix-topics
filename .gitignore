@@ -1,0 +1,12 @@
+/pgdata
+/src/_build
+/src/cover
+/src/deps
+/src/doc
+/src/.fetch
+/src/erl_crash.dump
+/src/*.ez
+/src/*.beam
+/src/config/*.secret.exs
+/src/.elixir_ls/
+/src/node_modules

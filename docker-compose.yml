@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  phoenix:
+    build: .
+#    volumes:
+#      - ./src:/app
+    volumes:
+      - myapp:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+#    command: /bin/bash -c "cd /app && mix ecto.create && mix ecto.migrate && exec mix phoenix.server" 
+#    command: /bin/bash -c "cd /app && mix phoenix.server"
+    command: sleep infinity
+  db:
+    image: postgres:9.5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+volumes:
+  myapp:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./src
+      o: bind
