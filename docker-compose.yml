@@ -3,15 +3,15 @@ version: "3"
 services:
   phoenix:
     build: .
-#    volumes:
-#      - ./src:/app
+    #    volumes:
+    #      - ./src:/app
     volumes:
       - myapp:/app
     ports:
       - "4000:4000"
     depends_on:
       - db
-#    command: /bin/bash -c "cd /app && mix ecto.create && mix ecto.migrate && mix phoenix.server" 
+    #    command: /bin/bash -c "cd /app && mix ecto.create && mix ecto.migrate && mix phoenix.server"
     command: sleep infinity
   db:
     image: postgres:9.5
@@ -25,17 +25,17 @@ services:
   pgadmin:
     image: dpage/pgadmin4:4.23
     environment:
-        PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
-        PGADMIN_DEFAULT_PASSWORD: password
-        PGADMIN_LISTEN_PORT: 80
-#        PGADMIN_CONFIG_SERVER_MODE: "False"
-#        PGADMIN_CONFIG_DESKTOP_USER: "pgadmin4@pgadmin.org"
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 80
+    #        PGADMIN_CONFIG_SERVER_MODE: "False"
+    #        PGADMIN_CONFIG_DESKTOP_USER: "pgadmin4@pgadmin.org"
     ports:
-        - 15432:80
+      - 15432:80
     volumes:
-        - pgadmin:/var/lib/pgadmin
+      - pgadmin:/var/lib/pgadmin
     depends_on:
-        - db
+      - db
 volumes:
   myapp:
     driver: local
@@ -49,4 +49,3 @@ volumes:
       type: none
       device: ./pgadmin
       o: bind
-
