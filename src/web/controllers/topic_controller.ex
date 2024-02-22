@@ -46,7 +46,10 @@ defmodule Discuss.TopicController do
     end
   end
 
-  def delete(conn, %{"id" => topic_id}) do
+  def show(conn, %{"id" => topic_id}) do
+    IO.puts "%%%%%%%%%%%%%%%%%%"
+    IO.puts "%%%%%%%%%%%%%%%%%%"
+    IO.puts "%%%%%%%%%%%%%%%%%%"
     Repo.get!(Topic, topic_id)
     |> Repo.delete!
 
