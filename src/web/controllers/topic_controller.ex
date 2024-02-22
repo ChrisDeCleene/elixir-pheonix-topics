@@ -46,7 +46,7 @@ defmodule Discuss.TopicController do
     end
   end
 
-  def show(conn, %{"id" => topic_id}) do
+  def delete(conn, %{"id" => topic_id}) do
     IO.puts "%%%%%%%%%%%%%%%%%%"
     IO.puts "%%%%%%%%%%%%%%%%%%"
     IO.puts "%%%%%%%%%%%%%%%%%%"
