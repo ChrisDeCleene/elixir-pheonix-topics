@@ -10,3 +10,20 @@
   position: relative;
   margin-bottom: 25px;
 }
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  text-transform: unset !important;
+  padding: 0px !important;
+  margin: 4px !important;
+}
+.button:hover {
+  background-color: transparent !important;
+  color: #333333 !important;
+  text-decoration: underline !important;
+}
